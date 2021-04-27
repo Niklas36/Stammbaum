@@ -1,0 +1,13 @@
+User Stories Taschenrechner
+
+User Story Vorlage: Als <Rolle/Anwender> möchte ich <Ziel/Wunsch/Funktion>, um <Nutzen>
+
+Titel: Softwarestruktur
+Story: Als Benutzer möchte ich einen Namen aus einer angezeigten Listen eingeben und anschließend sollen mir die zugehörigen Eltern, Geschwister 
+		und Kinder ausgegeben werden.
+Akzeptanzkriterien:
+- Es wird eine Liste mit möglichen Namen ausgegeben
+- Man kann einen Namen aus dieser Liste eingeben
+- Es werden die entsprechenden direkten Verwandten ausgegeben
+Status:
+- Implementierung
