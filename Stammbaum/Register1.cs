@@ -8,38 +8,40 @@ namespace Stammbaum
 {
     class Register1
     {
+        public string eingabeName;
+   
+        public List<string> Eltern = new List<string> { "Astrid", "Andreas" };
+        public List<string> Geschwister = new List<string> { "Niklas", "Merle", "Dominique" };
+        public List<string> Kinder = new List<string>();
 
-        private List<string> Eltern = new List<string> { "Astrid", "Andreas" };
-        private List<string> Geschwister = new List<string> { "Niklas", "Merle", "Dominique" };
-        //TODO: Kinder einfügen
-
-
+        // Ausgabe der Personen, anhand derer der Stammbaum bestimmt werden kann
         public void PersonenAusgeben()
         {
             foreach (var name in Geschwister)
             {
-                Console.WriteLine(name);
+                Console.WriteLine("- " + name);
             }
         }
 
-        public void ElternUndGeschwisterAusgeben(string eingabeName)
+        // Zuweisung der Kinder für den ausgewählten Namen
+        public void KinderFestlegen()
         {
-            Console.WriteLine(eingabeName + " hat folgende Eltern:");
-            foreach (var name in Eltern)
+            if (eingabeName == "Niklas")
             {
-                Console.WriteLine(name);
+                Kinder.Add(eingabeName + " hat keine Kinder");
             }
-
-            
-            Geschwister.Remove(eingabeName);
-
-            Console.WriteLine(eingabeName + " hat folgenden Geschwister:");
-            foreach (var name in Geschwister)
+            else if (eingabeName == "Merle")
             {
-                Console.WriteLine(name);
+                Kinder.Add(eingabeName + " hat keine Kinder.");
             }
-
+            else
+            {
+                Kinder.Add("Ina");
+                Kinder.Add("Bea");
+            }
         }
-                
+        
+
+
     }
 }

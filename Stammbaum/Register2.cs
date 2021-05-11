@@ -8,37 +8,51 @@ namespace Stammbaum
 {
     class Register2
     {
+        public string eingabeName;
 
-        private List<string> Eltern = new List<string> { "Hermann", "Gerda" };
-        private List<string> Geschwister = new List<string> { "Edgar", "Andreas", "Heike", "Angelika", "Alexander" };
-        //TODO: Kinder einfügen
+        public List<string> Eltern = new List<string> { "Hermann", "Gerda" };
+        public List<string> Geschwister = new List<string> { "Edgar", "Andreas", "Heike", "Angelika", "Alexander" };
+        public List<string> Kinder = new List<string>();
 
 
+        // Ausgabe der Personen, anhand derer der Stammbaum bestimmt werden kann
         public void PersonenAusgeben()
         {
             foreach (var name in Geschwister)
             {
-                Console.WriteLine(name);
+                Console.WriteLine("- " + name);
             }
         }
 
-        public void ElternUndGeschwisterAusgeben(string eingabeName)
+        // Zuweisung der Kinder für den ausgewählten Namen
+        public void KinderFestlegen()
         {
-            Console.WriteLine(eingabeName + " hat folgende Eltern:");
-            foreach (var name in Eltern)
+            if (eingabeName == "Edgar")
             {
-                Console.WriteLine(name);
+                Kinder.Add("Lennard");
+                Kinder.Add("Marlene");
             }
-
-
-            Geschwister.Remove(eingabeName);
-
-            Console.WriteLine(eingabeName + " hat folgenden Geschwister:");
-            foreach (var name in Geschwister)
+            else if (eingabeName == "Andreas")
             {
-                Console.WriteLine(name);
-            }
+                Kinder.Add("Merle");
+                Kinder.Add("Niklas");
+                Kinder.Add("Dominique");
 
+            }
+            else if (eingabeName == "Heike")
+            {
+                Kinder.Add("Marie");
+            }
+            else if (eingabeName == "Angelika")
+            {
+                Kinder.Add("Marek");
+            }
+            else
+            {
+                Kinder.Add("Liv Nike");
+
+            }
         }
+
     }
 }
